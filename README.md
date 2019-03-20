@@ -1,9 +1,9 @@
 # Laravel-Vue-Quasar SPA preset
 
-This repository is forked from [https://github.com/cretueusebiu/laravel-vue-spa](https://github.com/cretueusebiu/laravel-vue-spa). The original repository provides a Laravel-Vue preset using Bootstrap 4. Instead of Bootstrap, this repository uses the [Quasar Framework](https://v1.quasar-framework.org/) providing applications with a Material UI.
+This repository is forked from [https://github.com/cretueusebiu/laravel-vue-spa](https://github.com/cretueusebiu/laravel-vue-spa). The original repository provides a Laravel-Vue preset based on Bootstrap 4. Instead of Bootstrap, this repository uses the [Quasar Framework](https://v1.quasar-framework.org/) resulting in applications with a powerful Material UI.
 
 <p align="center">
-<img src="https://i.imgur.com/NHFTsGt.png">
+<img src="https://i.imgur.com/MQMGsVH.png">
 </p>
 
 ## Features
@@ -18,15 +18,21 @@ This repository is forked from [https://github.com/cretueusebiu/laravel-vue-spa]
 
 ## Installation
 
-- `composer create-project --prefer-dist cretueusebiu/laravel-vue-spa`
+- `git clone https://github.com/HansSchouten/Laravel-Vue-Quasar-SPA.git`
+- `cd Laravel-Vue-Quasar-SPA`
+- `cp .env.example .env`
 - Edit `.env` and set your database connection details
-- (When installed via git clone or download, run `php artisan key:generate` and `php artisan jwt:secret`)
+- `composer install`
+- `php artisan key:generate`
+- `php artisan jwt:secret`
 - `php artisan migrate`
-- `npm install` or `yarn`
+- `npm install` / `yarn`
 
 ## Usage
 
-#### Development
+An account can be created via `/register`. After logging in via `/login` the dashboard is accessible.
+
+### Development
 
 ```bash
 # build and watch
@@ -36,7 +42,7 @@ npm run watch
 npm run hot
 ```
 
-#### Production
+### Production
 
 ```bash
 npm run production
@@ -44,4 +50,4 @@ npm run production
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for information about the changes made on the original repository.
