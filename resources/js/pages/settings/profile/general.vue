@@ -7,7 +7,7 @@
         </p>
         <q-card>
           <form @submit.prevent="update" @keydown="form.onKeydown($event)">
-            <alert-success :form="form" :message="$t('info_updated')"/>
+            <alert-success :form="form" :message="$t('info_updated')" />
 
             <div class="q-pa-lg">
               <div class="col-12 q-pb-md">
