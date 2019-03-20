@@ -2,7 +2,7 @@
     <q-toolbar>
         <q-toolbar-title>
             <q-avatar>
-                <img src="/images/logo.png">
+                <img src="https://cdn.quasar-framework.org/logo/svg/quasar-logo.svg">
             </q-avatar>
             {{ appName }}
         </q-toolbar-title>
