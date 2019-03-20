@@ -1,10 +1,6 @@
-# Laravel-Vue SPA 
+# Laravel-Vue-Quasar SPA preset
 
-<a href="https://travis-ci.org/cretueusebiu/laravel-vue-spa"><img src="https://travis-ci.org/cretueusebiu/laravel-vue-spa.svg?branch=master" alt="Build Status"></a>
-<a href="https://packagist.org/packages/cretueusebiu/laravel-vue-spa"><img src="https://poser.pugx.org/cretueusebiu/laravel-vue-spa/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/cretueusebiu/laravel-vue-spa"><img src="https://poser.pugx.org/cretueusebiu/laravel-vue-spa/v/stable.svg" alt="Latest Stable Version"></a>
-
-> A Laravel-Vue SPA starter project template.
+This repository is forked from [https://github.com/cretueusebiu/laravel-vue-spa](https://github.com/cretueusebiu/laravel-vue-spa). The original repository provides a Laravel-Vue preset using Bootstrap 4. Instead of Bootstrap, this repository uses the [Quasar Framework](https://v1.quasar-framework.org/) providing applications with a Material UI.
 
 <p align="center">
 <img src="https://i.imgur.com/NHFTsGt.png">
@@ -18,7 +14,7 @@
 - Login, register and password reset
 - Authentication with JWT
 - Socialite integration
-- Bootstrap 4 + Font Awesome 5
+- Quasar 1.0.0 Beta 11
 
 ## Installation
 
