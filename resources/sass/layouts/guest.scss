@@ -1,0 +1,18 @@
+#layout-guest {
+  .q-field--labeled .q-field__native,
+  .q-field--labeled .q-field__prefix,
+  .q-field--labeled .q-field__suffix {
+    padding-top: 30px;
+  }
+  .q-field__native {
+    font-size: 17px;
+  }
+  .q-field__control {
+    height: 70px;
+  }
+
+  button[type=submit] {
+    height: 45px;
+    width: 100%;
+  }
+}

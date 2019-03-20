@@ -3,7 +3,9 @@
     <loading ref="loading"/>
 
     <transition name="page" mode="out-in">
-      <component v-if="layout" :is="layout"/>
+      <div v-if="layout" :id="'layout-' + layout.name">
+        <component :is="layout"/>
+      </div>
     </transition>
   </div>
 </template>
@@ -32,7 +34,7 @@ export default {
 
   data: () => ({
     layout: null,
-    defaultLayout: 'default'
+    defaultLayout: 'admin'
   }),
 
   metaInfo () {

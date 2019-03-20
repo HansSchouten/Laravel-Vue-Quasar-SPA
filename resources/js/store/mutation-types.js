@@ -8,3 +8,6 @@ export const UPDATE_USER = 'UPDATE_USER'
 
 // lang.js
 export const SET_LOCALE = 'SET_LOCALE'
+
+// drawer.js
+export const SET_DRAWER = 'SET_DRAWER'

@@ -19,6 +19,7 @@ export const getters = {
 export const mutations = {
   [types.SET_LOCALE] (state, { locale }) {
     state.locale = locale
+    Cookies.set('locale', locale, { expires: 365 })
   }
 }
 
@@ -26,7 +27,5 @@ export const mutations = {
 export const actions = {
   setLocale ({ commit }, { locale }) {
     commit(types.SET_LOCALE, { locale })
-
-    Cookies.set('locale', locale, { expires: 365 })
   }
 }

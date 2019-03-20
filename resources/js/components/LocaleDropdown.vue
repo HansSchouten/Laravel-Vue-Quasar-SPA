@@ -1,16 +1,22 @@
 <template>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button"
-       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      {{ locales[locale] }}
-    </a>
-    <div class="dropdown-menu">
-      <a v-for="(value, key) in locales" :key="key" class="dropdown-item" href="#"
-         @click.prevent="setLocale(key)">
-        {{ value }}
-      </a>
-    </div>
-  </li>
+
+  <div class="self-stretch row no-wrap">
+    <q-btn-dropdown flat no-caps stretch :label="locales[locale]">
+      <q-list>
+
+        <q-item clickable v-close-popup v-for="(value, key) in locales"
+                :key="key" @click.prevent="setLocale(key)">
+          <q-item-section>
+            <q-item-label>
+              {{ value }}
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+
+      </q-list>
+    </q-btn-dropdown>
+  </div>
+
 </template>
 
 <script>
