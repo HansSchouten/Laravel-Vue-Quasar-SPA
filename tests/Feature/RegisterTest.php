@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-use App\User;
+use App\Models\User;
 
 class RegisterTest extends TestCase
 {
