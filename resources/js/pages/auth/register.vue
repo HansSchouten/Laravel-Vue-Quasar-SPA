@@ -16,6 +16,14 @@
             <div class="q-pa-lg">
               <div class="col-12 q-pb-lg q-mb-sm">
                 <div class="q-pl-xs q-pr-xs">
+                  <q-input v-model="form.name" type="text" bottom-slots
+                           :label="$t('name')" :error="form.errors.has('name')">
+                    <template v-slot:error>
+                      <has-error :form="form" field="name" />
+                    </template>
+                  </q-input>
+                </div>
+                <div class="q-pl-xs q-pr-xs">
                   <q-input v-model="form.email" type="email" bottom-slots
                            :label="$t('email')" :error="form.errors.has('email')">
                     <template v-slot:error>
