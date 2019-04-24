@@ -14,18 +14,6 @@ class OAuthController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        config([
-            'services.github.redirect' => route('oauth.callback', 'github'),
-        ]);
-    }
-
-    /**
      * Redirect the user to the provider authentication page.
      *
      * @param  string $provider
