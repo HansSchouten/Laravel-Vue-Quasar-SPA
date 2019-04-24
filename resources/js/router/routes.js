@@ -9,19 +9,21 @@ const Settings = () => import('~/pages/settings/index').then(m => m.default || m
 const SettingsProfile = () => import('~/pages/settings/profile/index').then(m => m.default || m)
 
 export default [
-  { path: '/login', name: 'login', component: Login },
-  { path: '/register', name: 'register', component: Register },
-  { path: '/password/reset', name: 'password.request', component: PasswordEmail },
-  { path: '/password/reset/:token', name: 'password.reset', component: PasswordReset },
+    { path: '/login', name: 'login', component: Login },
+    { path: '/register', name: 'register', component: Register },
+    { path: '/password/reset', name: 'password.request', component: PasswordEmail },
+    { path: '/password/reset/:token', name: 'password.reset', component: PasswordReset },
 
-  { path: '/dashboard', name: 'dashboard', component: Dashboard },
-  { path: '/settings',
-    component: Settings,
-    children: [
-      { path: '', redirect: { name: 'settings.profile' } },
-      { path: 'profile', name: 'settings.profile', component: SettingsProfile }
-    ] },
+    { path: '/dashboard', name: 'dashboard', component: Dashboard },
+    {
+        path: '/settings',
+        component: Settings,
+        children: [
+            { path: '', redirect: { name: 'settings.profile' } },
+            { path: 'profile', name: 'settings.profile', component: SettingsProfile }
+        ]
+    },
 
-  { path: '/', redirect: { name: 'dashboard' } },
-  { path: '*', component: NotFound }
+    { path: '/', redirect: { name: 'dashboard' } },
+    { path: '*', component: NotFound }
 ]

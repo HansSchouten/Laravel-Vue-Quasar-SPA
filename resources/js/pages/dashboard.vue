@@ -1,17 +1,18 @@
 <template>
+    <div></div>
 </template>
 
 <script>
 export default {
-  middleware: 'auth',
+    middleware: 'auth',
 
-  metaInfo () {
-    return { title: this.$t('dashboard') }
-  },
-  data() {
-    return {
-      text: ''
+    metaInfo () {
+        return { title: this.$t('dashboard') }
+    },
+    data () {
+        return {
+            text: ''
+        }
     }
-  }
 }
 </script>

@@ -4,14 +4,14 @@
         <div id="searchbox">
             <q-input standout square dense v-model="searchModel" placeholder="Search...">
                 <template v-slot:append>
-                    <q-icon name="search" />
+                    <q-icon name="search"/>
                 </template>
             </q-input>
         </div>
 
         <q-item clickable icon="dashboard" class="non-selectable top-level" :to="{ name: 'dashboard' }">
             <q-item-section avatar>
-                <q-icon color="primary" name="dashboard" />
+                <q-icon color="primary" name="dashboard"/>
             </q-item-section>
             <q-item-section>
                 {{ $t('dashboard') }}

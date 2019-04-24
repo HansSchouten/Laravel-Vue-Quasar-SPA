@@ -1,42 +1,42 @@
 <template>
-  <q-layout view="Lhh lpr lFf">
+    <q-layout view="Lhh lpr lFf">
 
-    <q-header elevated class="bg-primary text-white">
-      <toolbar />
-    </q-header>
+        <q-header elevated class="bg-primary text-white">
+            <toolbar/>
+        </q-header>
 
-    <q-drawer v-model="leftDrawer" bordered show-if-above>
-      <drawer />
-    </q-drawer>
+        <q-drawer v-model="leftDrawer" bordered show-if-above>
+            <drawer/>
+        </q-drawer>
 
-    <q-page-container>
-      <child />
-    </q-page-container>
+        <q-page-container>
+            <child/>
+        </q-page-container>
 
-  </q-layout>
+    </q-layout>
 </template>
 
 <script>
-  import Toolbar from '~/components/Toolbar'
-  import Drawer from '~/components/Drawer'
+import Toolbar from '~/components/Toolbar'
+import Drawer from '~/components/Drawer'
 
-  export default {
+export default {
     name: 'admin',
 
     components: {
-      Toolbar,
-      Drawer
+        Toolbar,
+        Drawer
     },
 
     computed: {
-      leftDrawer: {
-        get () {
-          return this.$store.state.drawer.leftDrawer
-        },
-        set (v) {
-          this.$store.dispatch('drawer/setDrawer', v)
+        leftDrawer: {
+            get () {
+                return this.$store.state.drawer.leftDrawer
+            },
+            set (v) {
+                this.$store.dispatch('drawer/setDrawer', v)
+            }
         }
-      }
     }
-  }
+}
 </script>

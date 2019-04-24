@@ -5,27 +5,27 @@ const { locale, locales } = window.config
 
 // state
 export const state = {
-  locale: Cookies.get('locale') || locale,
-  locales: locales
+    locale: Cookies.get('locale') || locale,
+    locales: locales
 }
 
 // getters
 export const getters = {
-  locale: state => state.locale,
-  locales: state => state.locales
+    locale: state => state.locale,
+    locales: state => state.locales
 }
 
 // mutations
 export const mutations = {
-  [types.SET_LOCALE] (state, { locale }) {
-    state.locale = locale
-    Cookies.set('locale', locale, { expires: 365 })
-  }
+    [types.SET_LOCALE] (state, { locale }) {
+        state.locale = locale
+        Cookies.set('locale', locale, { expires: 365 })
+    }
 }
 
 // actions
 export const actions = {
-  setLocale ({ commit }, { locale }) {
-    commit(types.SET_LOCALE, { locale })
-  }
+    setLocale ({ commit }, { locale }) {
+        commit(types.SET_LOCALE, { locale })
+    }
 }

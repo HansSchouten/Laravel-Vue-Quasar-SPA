@@ -13,16 +13,16 @@
 </template>
 
 <script>
-    import GuestToolbar from "../components/GuestToolbar";
+import GuestToolbar from '../components/GuestToolbar';
 
-    export default {
-        name: 'guest',
+export default {
+    name: 'guest',
 
-        components: {
-            GuestToolbar,
-        },
-        data () {
-            return {}
-        }
+    components: {
+        GuestToolbar
+    },
+    data () {
+        return {}
     }
+}
 </script>

@@ -5,9 +5,9 @@ import { HasError } from 'vform'
 
 // Components that are registered globally.
 [
-  Child,
-  HasError,
-  AlertSuccess
+    Child,
+    HasError,
+    AlertSuccess
 ].forEach(Component => {
-  Vue.component(Component.name, Component)
+    Vue.component(Component.name, Component)
 })

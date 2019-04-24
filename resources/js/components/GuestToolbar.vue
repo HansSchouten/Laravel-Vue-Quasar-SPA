@@ -7,21 +7,20 @@
             {{ appName }}
         </q-toolbar-title>
 
-        <locale-dropdown />
+        <locale-dropdown/>
     </q-toolbar>
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
-    import LocaleDropdown from './LocaleDropdown'
+import LocaleDropdown from './LocaleDropdown'
 
-    export default {
-        components: {
-            LocaleDropdown
-        },
+export default {
+    components: {
+        LocaleDropdown
+    },
 
-        data: () => ({
-            appName: window.config.appName
-        })
-    }
+    data: () => ({
+        appName: window.config.appName
+    })
+}
 </script>
