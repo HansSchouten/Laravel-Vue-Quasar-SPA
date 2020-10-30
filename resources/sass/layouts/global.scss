@@ -1,7 +1,39 @@
 body {
   background-color: #fafafa;
-}
-a {
-  text-decoration: none;
-  color: inherit;
+
+  .q-table {
+    color: rgba(0,0,0,.87);
+  }
+  .q-table th {
+    color: rgba(0,0,0,.54);
+  }
+  .q-table__bottom {
+    color: rgba(0,0,0,.54);
+  }
+
+  .q-field--labeled .q-field__native,
+  .q-field--labeled .q-field__prefix,
+  .q-field--labeled .q-field__suffix,
+  .q-field--auto-height.q-field--labeled .q-field__control-container {
+    padding-top: 30px;
+  }
+  .q-field__native {
+    font-size: 17px;
+  }
+  .q-field__control {
+    height: 70px;
+  }
+  .q-field--auto-height .q-field__control,
+  .q-field--auto-height .q-field__native {
+    min-height: 70px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  form small {
+    color: #999;
+  }
 }

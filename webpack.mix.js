@@ -1,35 +1,22 @@
 const path = require('path')
+const fs = require('fs-extra')
 const mix = require('laravel-mix')
+require('laravel-mix-versionhash')
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-mix.config.vue.esModule = true
-
 mix
-  .js('resources/js/app.js', 'public/js')
-  .sass('resources/sass/app.scss', 'public/css')
+  .js('resources/js/app.js', 'public/dist/js')
+  .sass('resources/sass/app.scss', 'public/dist/css')
 
-  .sourceMaps()
   .disableNotifications()
 
 if (mix.inProduction()) {
-  mix.version()
-
-  mix.extract([
-    'vue',
-    'vform',
-    'axios',
-    'vuex',
-    'jquery',
-    'popper.js',
-    'vue-i18n',
-    'vue-meta',
-    'js-cookie',
-    'vue-router',
-    'sweetalert2',
-    'vuex-router-sync',
-    '@fortawesome/vue-fontawesome',
-    '@fortawesome/fontawesome-svg-core'
-  ])
+  mix
+    // .extract() // Disabled until resolved: https://github.com/JeffreyWay/laravel-mix/issues/1889
+    // .version() // Use `laravel-mix-versionhash` for the generating correct Laravel Mix manifest file.
+    .versionHash()
+} else {
+  mix.sourceMaps()
 }
 
 mix.webpackConfig({
@@ -43,7 +30,24 @@ mix.webpackConfig({
     }
   },
   output: {
-    chunkFilename: 'js/[name].[chunkhash].js',
-    publicPath: mix.config.hmr ? '//localhost:8080' : '/'
+    chunkFilename: 'dist/js/[chunkhash].js',
+    path: mix.config.hmr ? '/' : path.resolve(__dirname, './public/build')
   }
 })
+
+mix.then(() => {
+  if (!mix.config.hmr) {
+    process.nextTick(() => publishAseets())
+  }
+})
+
+function publishAseets () {
+  const publicDir = path.resolve(__dirname, './public')
+
+  if (mix.inProduction()) {
+    fs.removeSync(path.join(publicDir, 'dist'))
+  }
+
+  fs.copySync(path.join(publicDir, 'build', 'dist'), path.join(publicDir, 'dist'))
+  fs.removeSync(path.join(publicDir, 'build'))
+}
