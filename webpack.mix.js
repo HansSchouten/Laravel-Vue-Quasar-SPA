@@ -37,11 +37,11 @@ mix.webpackConfig({
 
 mix.then(() => {
   if (!mix.config.hmr) {
-    process.nextTick(() => publishAseets())
+    process.nextTick(() => publishAssets())
   }
 })
 
-function publishAseets () {
+function publishAssets () {
   const publicDir = path.resolve(__dirname, './public')
 
   if (mix.inProduction()) {
@@ -49,5 +49,6 @@ function publishAseets () {
   }
 
   fs.copySync(path.join(publicDir, 'build', 'dist'), path.join(publicDir, 'dist'))
+  fs.copySync(path.join(publicDir, 'build', 'fonts'), path.join(publicDir, 'fonts'))
   fs.removeSync(path.join(publicDir, 'build'))
 }
