@@ -48,7 +48,6 @@ function publishAssets () {
     fs.removeSync(path.join(publicDir, 'dist'))
   }
 
-  fs.copySync(path.join(publicDir, 'build', 'dist'), path.join(publicDir, 'dist'))
-  fs.copySync(path.join(publicDir, 'build', 'fonts'), path.join(publicDir, 'fonts'))
+  fs.copySync(path.join(publicDir, 'build'), path.join(publicDir))
   fs.removeSync(path.join(publicDir, 'build'))
 }
